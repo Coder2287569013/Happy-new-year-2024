@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year 2024 Wishes</title>
+    <style>
+        body {
+            background-image: url('/static/background.png');
+            background-size: 100% 800px;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+        img {
+            width: 1000px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        button {
+            background-color: #1abf82;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 12px;
+            font-family: sans-serif;
+        }
+        #app {
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <img src="/static/wish_bg.png" class="wish_bg">
+    <div id="app">
+        <h1 id="wish" style="font-family: sans-serif;">{{ wish }}</h1>
+        <button @click="MakeWish">Make a Wish!</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                greetings: ["Happy New Year", 
+                            "Cheers to the New Year", 
+                            "Wishing you a joyous New Year"
+                            ],
+                wishes: ["May joy and prosperity follow you throughout the year",
+                        "Wishing you moments of peace amid the difficulties",
+                        "Hoping 2024 is your happiest year yet",
+                        "May this year bring new happiness, new goals, new achievements",
+                        "Let the old year-end and the New Year begin with the warmest of aspirations",
+                        "A new year, a new start, and way to go!",
+                        "Wishing you a year that's promising, exciting, inspiring, and full of fun!",
+                        "Hoping you have a year that is happy, cheerful, joyful, and energetic",
+                        "Prosperous, blissful, healthy, and bright; here’s to a wonderful 2024!",
+                        "Wishing you a New Year rich with the blessings of love, joy, warmth, and laughter",
+                        "May the year ahead be full of contentment and joy",
+                        "Hope the New Year starts off bright, and continues to shine throughout the year",
+                        "May the spirit of the season fill your heart with warmth and love",
+                        "Here’s to a year of new adventures and opportunities",
+                        "Wishing you a season of blessings and a lifetime of grace",
+                        "May the joy of the season stay with you throughout the year",
+                        "Here’s to making more cherished memories in 2024",
+                        "Wishing you a sparkling New Year filled with joy and fulfillment",
+                        "May the New Year bring you new perspectives and fresh beginnings",
+                        "Wishing you laughter and happiness in the coming year",
+                        "May 2024 be the year your dreams take flight",
+                        "Wishing you a year of courage, strength, and endless possibilities",
+                        "May your New Year be filled with adventure and excitement",
+                        "Hoping your New Year is filled with success, health, and happiness",
+                        "May you find peace, love, and success in 2024",
+                        "Sending you best wishes for a New Year that’s bursting with joy",
+                        "Hoping 2024 is filled with love, laughter, and all that you wish for",
+                        "May you find happiness", 
+                        "May prosperity be yours", 
+                        "Wishing you health and wealth", 
+                        "May all your dreams come true", 
+                        "May this year be better than the last"
+                        ],
+                wish: ''
+            },
+            methods: {
+                MakeWish() {
+                    const idg = Math.floor(Math.random() * this.greetings.length);
+                    const idw = Math.floor(Math.random() * this.wishes.length);
+                    this.wish = this.greetings[idg] + " 2024! " + this.wishes[idw] + "!";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
